@@ -1,0 +1,35 @@
+
+#ifndef __COMMON_H
+#define __COMMON_H
+#include "stm32f10x_conf.h "
+
+
+//
+#define  START_CODE  0x02
+#define  END_CODE    0x03
+
+#define  RS232_BUFFER1_SIZE  512
+#define  RS485_BUFFER1_SIZE  512
+#define USART1_DR_BASE           0x40013804
+#define USART2_DR_BASE           0x40004404
+#define USART3_DR_BASE           0x40004804
+
+#define LED_RS232_ON      GPIOC->BRR=0X1000;
+#define LED_RS232_OFF     GPIOC->BSRR=0X1000;
+
+#define LED_RS485_ON      GPIOC->BRR=0X0800;
+#define LED_RS485_OFF     GPIOC->BSRR=0X0800;
+
+#define COMMAND_QUESTION_MASK         0X3F   //?
+#define COMMAND_EXCLAMATION_POINT     0X21  //!
+#define COMMAND_START                 0X53  //S
+#define COMMAND_CANCEL                0X43  //C
+#define COMMAND_GOOD                  0X47  //G
+#define COMMAND_NOGOOD                0X4E  //N
+
+
+u8 AsciiToHexU8(u8 high,u8 low,u8*number);
+u8 AsciiToHex(u8*ascii);
+u8 HexToAscii(u8 hex);
+u8 AsciiCommand(u8 hex);
+#endif
