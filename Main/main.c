@@ -16,7 +16,7 @@ int main(void)
   Step_Enable = ON;
  while (1)
 	{	 
-	  IWDG_ReloadCounter();       //喂狗
+	  IWDG_ReloadCounter();       //喂狗// 我想修改点东西
 	  Rx232ProcessFunc();
 		led_display();
 	  StepRun_Func(Start_Flag, Speed_Value, Length_Value,&WorkNumber_Value);
