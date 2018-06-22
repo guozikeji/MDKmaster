@@ -22,6 +22,7 @@ u16 BspAdcRead(void)
 			BspAdcConvertedBuffer[i]=BspAdcConvertedBuffer[j];
 			BspAdcConvertedBuffer[j]=temp;
 		}
+             //  XIAO TATA
 	}
 	temp=0;
 	for(i=4;i<12;i++)temp+=BspAdcConvertedBuffer[i];
